@@ -1,6 +1,7 @@
 class PinsController < ApplicationController
   def index
-    @pins = Pin.all
+    @pins = Pin.joins(:category).order('name')
+    @categories = Category.all
   end
 
   def new

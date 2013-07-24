@@ -5,7 +5,7 @@
 #  id          :integer          not null, primary key
 #  title       :string(255)
 #  address     :text
-#  longitutde  :float            default(0.0)
+#  longitude   :float            default(0.0)
 #  latitude    :float            default(0.0)
 #  user_id     :integer
 #  category_id :integer
