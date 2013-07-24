@@ -1,0 +1,10 @@
+%div
+	%ul
+		- if @auth.present?
+			%li= link_to(@auth.email, login_path, :method => :delete)
+		- else
+			%li= link_to('Login', login_path)
+
+%div#map
+	%div#map_canvas
+

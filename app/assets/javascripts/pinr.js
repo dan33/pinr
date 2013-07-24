@@ -1,5 +1,6 @@
 var map;
 var canvas;
+var markers = []
 
 var outdoors = [
   {
@@ -85,13 +86,6 @@ var work = [
   }
 ];
 
-// $('#outdoors').click(function () {
-//     console.log("hello")
-//     var category = outdoors;
-//     display_map(-33.89336, 151.217167, 13);
-// });
-
-// var category = outdoors;
 
 var display_map = function (lat, long, zoom) {
   canvas = $('#map_canvas')[0];
@@ -103,6 +97,7 @@ var display_map = function (lat, long, zoom) {
     center: new google.maps.LatLng(lat, long),
     zoom: zoom,
     styles: category,
+    visualRefresh: true,
     panControl: true,
     panControlOptions: {
     position: google.maps.ControlPosition.RIGHT_TOP
@@ -128,42 +123,68 @@ var create_pin = function () {
       dataType: 'json',
       type: 'POST',
       url: '/pins',
-      data: {
-        authenticity_token: token,
-        pin: {
-          title: title,
-          address: address,
-          category_id: category_id
+      data: {authenticity_token:token, 'pin[title]':title, 'pin[address]':address,
+          'pin[category_id]': category_id
         }
-      }
-    });
+    }).done(process_pin);
 
     return false;
   };
 
+function process_pin(pin) {
+  add_pin_to_array(pin);
+  display_pins();
+};
 
-function add_marker(lat, long, title)
-{
+function add_pin_to_array(pin) {
+  pins = _.reject(pins, function(p){return p.id == pin.id;});
+  pins.push(pin);
+};
+
+function display_pins() {
+  clear_markers();
+  $('ul#pins').empty();
+  _.each(pins, display_pin);
+};
+
+function display_pin(pin) {
+  add_marker(pin.latitude, pin.longitude, pin.title);
+
+  var li = $('<li>');
+
+  var divA = $('<div>');
+  divA.addClass('pin');
+
+
+  var div1 = $('<div>');
+  div1.addClass('category color');
+  div1.css('background-color', pin.category.color);
+
+  li.append([divA, div1]);
+  $('ul#pins').append(li);
+};
+
+
+function add_marker(lat, long, title) {
   var latlng = new google.maps.LatLng(lat, long);
   var marker = new google.maps.Marker({position: latlng, map: map, title: title});
   markers.push(marker);
 };
 
-function clear_markers()
-{
+function clear_markers() {
   _.each(markers, function(m){m.setMap(null);});
   markers = [];
 };
+
 
 var category = interesting;
 
 $(document).ready(function () {
   display_map(-33.89336, 151.217167, 13);
-
   $('#outdoors').click(function () {
-      console.log("hello")
-      var category = work;
+      var category = outdoors;
+      $('#map_canvas').empty;
       display_map(-33.89336, 151.217167, 13);
-  });
 
+  });
 });
