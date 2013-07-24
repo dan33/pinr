@@ -17,7 +17,7 @@ class Pin < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
 
-  attr_accessible :title, :address, :user_id
+  attr_accessible :title, :address, :user_id, :category_id
 
   validates_presence_of :title, :address
 end

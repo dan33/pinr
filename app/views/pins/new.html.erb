@@ -5,9 +5,11 @@
       <%= f.text_field :title, :autofocus => true %>
       <%= f.label :address %>
       <%= f.text_field :address %>
+      <%= f.select :category_id, Category.all.collect {|x| [x.name, x.id]}, {} %>
       <%= f.submit nil, :class => 'button radius' %>
       <% end %>
   </div>
   <div class="large-8 columns">
   </div>
 </div>
+
