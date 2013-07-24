@@ -10,3 +10,6 @@
         = "pins.push({id: #{pin.id}, title: '#{pin.title}', category_id: #{pin.category_id}, category: {name: '#{pin.category.name}', address: '#{pin.address}', longitude: #{pin.longitude}, latitude: #{pin.latitude}});"
       %li.title= pin.title
       %li.address= pin.address
+
+%div#map
+  %div#map_canvas
