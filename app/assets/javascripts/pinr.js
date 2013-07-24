@@ -1,5 +1,6 @@
 var map;
 var canvas;
+var markers = []
 
 var outdoors = [
   {
@@ -178,5 +179,8 @@ $(document).ready(function () {
   display_map(-33.89336, 151.217167, 13);
   $('#outdoors').click(function () {
       var category = outdoors;
+      $('#map_canvas').empty;
+      display_map(-33.89336, 151.217167, 13);
+
   });
 });

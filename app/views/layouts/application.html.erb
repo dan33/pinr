@@ -4,6 +4,7 @@
   <title>Pinr</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <link href='http://fonts.googleapis.com/css?family=Armata' rel='stylesheet' type='text/css'>
   <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE'] %>&sensor=false" type="text/javascript"></script>
   <%= csrf_meta_tags %>
 </head>
@@ -11,8 +12,28 @@
 
 <div id="container">
 </div>
-<div id="clean">
-	<button id="outdoors">Outdoors</button>
+	<div id="clean">
+		<div id="login">
+			  <% if @auth.present? %>
+			  <%= link_to(@auth.email, login_path, :method => :delete) %></li>
+			  <% else %>
+			  <%= link_to('Login', login_path, :class => 'login_button') %></li>
+			  <% end %>
+			<div id="loginform" class="invisible">
+				<%= render :partial => 'session/new', locals: { user: @user } %>
+			</div>
+			<div id="outdoors">
+			</div>
+			<div id="nightlife">
+			</div>
+			<div id="work">
+			</div>
+			<div id="dining">
+			</div>
+			<div id="interesting">
+			</div>
+		</div>
+	</div>
 </div>
 
 <%= yield %>
