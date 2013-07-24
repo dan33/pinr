@@ -85,7 +85,13 @@ var work = [
   }
 ];
 
-var category = interesting;
+// $('#outdoors').click(function () {
+//     console.log("hello")
+//     var category = outdoors;
+//     display_map(-33.89336, 151.217167, 13);
+// });
+
+// var category = outdoors;
 
 var display_map = function (lat, long, zoom) {
   canvas = $('#map_canvas')[0];
@@ -128,8 +134,15 @@ function clear_markers()
   markers = [];
 }
 
-$(document).ready(function () {
-  display_map(-33.89336, 151.217167, 13);
+var category = interesting;
 
+$(document).ready(function () {
+  // display_map(-33.89336, 151.217167, 13);
+
+  $('#outdoors').click(function () {
+      console.log("hello")
+      var category = work;
+      display_map(-33.89336, 151.217167, 13);
+  });
 
 });
