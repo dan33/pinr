@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="large-4 columns">
+    <%= form_for @pin do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title, :autofocus => true %>
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+      <%= f.hidden_field :latitude %>
+      <%= f.hidden_field :longitude %>
+      <%= f.select :category_id, Category.all.collect {|x| [x.name, x.id]}, {} %>
+      <%= f.submit nil, :class => 'button radius' %>
+      <% end %>
+  </div>
+  <div class="large-8 columns">
+  </div>
+</div>
