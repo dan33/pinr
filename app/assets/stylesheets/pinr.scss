@@ -5,6 +5,60 @@ overflow: hidden;
 background: gray;
 }
 
+#login_logout {
+	text-align: center;
+	line-height: 2;
+	background: #40AEDC;
+}
+
+label {
+	color: #fefefe;
+	font-family: Armata;
+	font-size: 0.9em;
+	text-align: center;
+	width: 100%;
+	padding-left: 3%;
+	padding-top: 10px;
+}
+
+input {
+	border: none;
+	outline: none;
+	background: #40AEDC;
+	width: 99%;
+	margin-right: 30px;
+	text-align: right;
+	font-size: 1.2em;
+	color: #fefefe;
+	border-bottom: 1px solid #fefefe;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #fefefe;
+}
+
+.login_submit {
+	text-align: center;
+	width: 100%;
+	padding-top: 10px;
+}
+
+#login_logout a {
+	text-decoration: none;
+	color: #fefefe;
+	font-family: Armata;
+	font-size: 1.2em;
+	padding: 10px;
+}
+
+#login_logout a:hover {
+	text-decoration: underline;
+}
+
+#loginform {
+	background: #40AEDC;
+}
+
 #map {
 	position: absolute;
 	top: 0;
@@ -48,35 +102,35 @@ background: gray;
 	display: block;
 }
 
-#outdoors {
+#Outdoors {
 	width: 100%;
 	height: 220px;
 	position: relative;
 	background: #40AEDC;
 }
 
-#nightlife {
+#Nightlife {
 	width: 100%;
 	height: 220px;
 	position: relative;
 	background: #58686D;
 }
 
-#work {
+#Work {
 	width: 100%;
 	height: 220px;
 	position: relative;
 	background: #E44646;
 }
 
-#dining {
+#Dining {
 	width: 100%;
 	height: 220px;
 	position: relative;
 	background: #E7BE50;
 }
 
-#interesting {
+#Interesting {
 	width: 100%;
 	height: 220px;
 	position: relative;

@@ -14,24 +14,21 @@
 </div>
 	<div id="clean">
 		<div id="login">
+			<div id="login_logout">
 			  <% if @auth.present? %>
-			  <%= link_to(@auth.email, login_path, :method => :delete) %></li>
+			  <%= link_to('Logout', login_path, :method => :delete) %>
+			  <%= link_to('New Pin', new_pin_path) %>
 			  <% else %>
-			  <%= link_to('Login', login_path, :class => 'login_button') %></li>
+			  <%= link_to('Login', login_path, :class => 'login_button') %>
 			  <% end %>
+			 </div>
 			<div id="loginform" class="invisible">
 				<%= render :partial => 'session/new', locals: { user: @user } %>
 			</div>
-			<div id="outdoors">
+			<div id="newpin">
+				<%= render 'pins/new' %>
 			</div>
-			<div id="nightlife">
-			</div>
-			<div id="work">
-			</div>
-			<div id="dining">
-			</div>
-			<div id="interesting">
-			</div>
+				<%= render 'pins/categories' %>
 		</div>
 	</div>
 </div>

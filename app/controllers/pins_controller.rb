@@ -9,7 +9,7 @@ class PinsController < ApplicationController
   end
 
   def create
-    pin = Pin.create(params[:pin])
+    @pin = Pin.create(params[:pin])
     @auth.pins << pin
 
     render :json => pin.as_json(:include => :category)

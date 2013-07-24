@@ -1,11 +1,14 @@
 %div
   %div
     = form_tag '/login' do
-      = label_tag :email
-      = text_field_tag :email, nil, :autofocus => true, :placeholder => 'Email: '
+      = label_tag :email, 'Email: '
       %br/
-      = label_tag :password
-      = password_field_tag :password, :placeholder => 'Password: '
+      = text_field_tag :email, nil, :autofocus => true
       %br/
-      = submit_tag 'Login', :class => 'login_submit'
+      %br/
+      = label_tag :password, 'Password: '
+      %br/
+      = password_field_tag :password
+      %br/
+      = submit_tag 'Submit', :class => 'login_submit'
   %div
