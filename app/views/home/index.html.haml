@@ -9,17 +9,3 @@
 %div#map
 	%div#map_canvas
 
-
-
-/ <ul>
-/   <% if @auth.present? %>
-/   <li><%= link_to(@auth.email, login_path, :method => :delete) %></li>
-/   <% else %>
-/   <li><%= link_to('Login', login_path) %></li>
-/   <% end %>
-/ </ul>
-
-/ <div id="map">
-/ 	<div id="map_canvas"></div>
-/ </div>
-
