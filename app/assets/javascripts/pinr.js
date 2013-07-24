@@ -1,16 +1,17 @@
 var map;
 var canvas;
-var styles = [
+
+var outdoors = [
   {
     featureType: "all",
     stylers: [
-      { saturation: -80 }
+      { saturation: -100 }
     ]
   },{
     featureType: "road.arterial",
     elementType: "geometry",
     stylers: [
-      { hue: "#00ffee" },
+      { hue: "#7cdaff" },
       { saturation: 50 }
     ]
   },{
@@ -22,7 +23,7 @@ var styles = [
   }
 ];
 
-var excited = [
+var interesting = [
   {
     featureType: "all",
     stylers: [
@@ -32,7 +33,7 @@ var excited = [
     featureType: "road.arterial",
     elementType: "geometry",
     stylers: [
-      { hue: "#00ffee" },
+      { hue: "#dfb7e5" },
       { saturation: 100 }
     ]
   },{
@@ -44,7 +45,7 @@ var excited = [
   }
 ];
 
-var $category = excited;
+var $category = outdoors;
 
 var display_map = function (lat, long, zoom) {
   canvas = $('#map_canvas')[0];
