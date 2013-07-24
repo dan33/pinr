@@ -11,8 +11,7 @@ var outdoors = [
     featureType: "road.arterial",
     elementType: "geometry",
     stylers: [
-      { hue: "#7cdaff" },
-      { saturation: 50 }
+      { color: "#7cdaff" }
     ]
   },{
     featureType: "poi.business",
@@ -33,8 +32,7 @@ var interesting = [
     featureType: "road.arterial",
     elementType: "geometry",
     stylers: [
-      { hue: "#dfb7e5" },
-      { saturation: 100 }
+      { color: "#dfb7e5" }
     ]
   },{
     featureType: "poi.business",
@@ -45,7 +43,49 @@ var interesting = [
   }
 ];
 
-var $category = outdoors;
+var nightlife = [
+  {
+    featureType: "all",
+    stylers: [
+      { saturation: -100 }
+    ]
+  },{
+    featureType: "road.arterial",
+    elementType: "geometry",
+    stylers: [
+      { color: "#545454" }
+    ]
+  },{
+    featureType: "poi.business",
+    elementType: "labels",
+    stylers: [
+      { visibility: "off" }
+    ]
+  }
+];
+
+var work = [
+  {
+    featureType: "all",
+    stylers: [
+      { saturation: -100 }
+    ]
+  },{
+    featureType: "road.arterial",
+    elementType: "geometry",
+    stylers: [
+      { color: "#dd7c7c" }
+    ]
+  },{
+    featureType: "poi.business",
+    elementType: "labels",
+    stylers: [
+      { visibility: "off" }
+    ]
+  }
+];
+
+var category = interesting;
 
 var display_map = function (lat, long, zoom) {
   canvas = $('#map_canvas')[0];
@@ -56,7 +96,7 @@ var display_map = function (lat, long, zoom) {
   var mapOptions = {
     center: new google.maps.LatLng(lat, long),
     zoom: zoom,
-    styles: $category,
+    styles: category,
     panControl: true,
     panControlOptions: {
     position: google.maps.ControlPosition.RIGHT_TOP
