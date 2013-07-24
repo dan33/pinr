@@ -1,0 +1,9 @@
+%ol#pins.no-bullet
+-@categories.each do |category|
+	%div
+		%div{ :id => category.name }
+			%li
+				= category.name
+			- category.pins.each do |pin|
+				%li
+					= pin.title
