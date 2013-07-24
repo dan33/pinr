@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="large-4 columns">
+    <%= form_for @pin do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title, :autofocus => true %>
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+      <%= f.select_tag 'category_id', options_from_collection_for_select(@auth.categories.order(:value).reverse, 'id', 'name') %>
+      <%= f.submit nil, :class => 'button radius' %>
+      <% end %>
+  </div>
+  <div class="large-8 columns">
+  </div>
+</div>
