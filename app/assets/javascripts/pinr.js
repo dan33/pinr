@@ -11,8 +11,7 @@ var outdoors = [
     featureType: "road.arterial",
     elementType: "geometry",
     stylers: [
-      { hue: "#7cdaff" },
-      { saturation: 0 }
+      { color: "#7cdaff" }
     ]
   },{
     featureType: "poi.business",
@@ -33,8 +32,7 @@ var interesting = [
     featureType: "road.arterial",
     elementType: "geometry",
     stylers: [
-      { hue: "#dfb7e5" },
-      { saturation: 0 }
+      { color: "#dfb7e5" }
     ]
   },{
     featureType: "poi.business",
@@ -55,8 +53,28 @@ var nightlife = [
     featureType: "road.arterial",
     elementType: "geometry",
     stylers: [
-      { hue: "#393939" },
-      { saturation: 0 }
+      { color: "#545454" }
+    ]
+  },{
+    featureType: "poi.business",
+    elementType: "labels",
+    stylers: [
+      { visibility: "off" }
+    ]
+  }
+];
+
+var work = [
+  {
+    featureType: "all",
+    stylers: [
+      { saturation: -100 }
+    ]
+  },{
+    featureType: "road.arterial",
+    elementType: "geometry",
+    stylers: [
+      { color: "#dd7c7c" }
     ]
   },{
     featureType: "poi.business",
