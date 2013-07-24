@@ -159,6 +159,7 @@ function clear_markers()
 };
 
 
+
 var category = interesting;
 
 $(document).ready(function () {
@@ -167,8 +168,6 @@ $(document).ready(function () {
    $('#outdoors').click(function () {
       console.log("hello");
       var category = outdoors;
-      $('#map_canvas').empty();
-      debugger;
-      display_map(-33.89336, 151.217167, 13);
+      //$('#map_canvas').empty();
   });
 });
