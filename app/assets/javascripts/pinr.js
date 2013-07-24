@@ -57,9 +57,18 @@ var display_map = function (lat, long, zoom) {
     center: new google.maps.LatLng(lat, long),
     zoom: zoom,
     styles: $category,
+    panControl: true,
+    panControlOptions: {
+    position: google.maps.ControlPosition.RIGHT_TOP
+    },
+    zoomControl: true,
+    zoomControlOptions: {
+    style: google.maps.ZoomControlStyle.LARGE,
+    position: google.maps.ControlPosition.RIGHT_TOP
+    },
+    mapTypeControl: false,
     mapTypeId: google.maps.MapTypeId.ROADMAP
-
-  };
+    };
   map = new google.maps.Map(canvas, mapOptions);
 };
 
