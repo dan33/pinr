@@ -1,5 +1,6 @@
 var map;
 var canvas;
+var markers = []
 
 var outdoors = [
   {
