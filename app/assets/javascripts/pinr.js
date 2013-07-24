@@ -123,10 +123,8 @@ var create_pin = function () {
       type: 'POST',
       url: '/pins',
       data: {authenticity_token:token, 'pin[title]':title, 'pin[address]':address,
-          'pin[category_id]': category_id
-        }
+          'pin[category_id]': category_id}
     }).done(process_pin);
-
     return false;
   };
 
@@ -154,7 +152,6 @@ function display_pin(pin) {
   var divA = $('<div>');
   divA.addClass('pin');
 
-
   var div1 = $('<div>');
   div1.addClass('category color');
   div1.css('background-color', pin.category.color);
@@ -162,7 +159,6 @@ function display_pin(pin) {
   li.append([divA, div1]);
   $('ul#pins').append(li);
 };
-
 
 function add_marker(lat, long, title) {
   var latlng = new google.maps.LatLng(lat, long);
