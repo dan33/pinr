@@ -1,5 +1,4 @@
 class PinsController < ApplicationController
-
   def index
     @pins = Pin.all
   end
@@ -10,11 +9,11 @@ class PinsController < ApplicationController
 
   def create
     @pin = Pin.new(params[:pin])
-      if @pin.save
-        redirect_to(root_path)
-      else
-        render :new
-      end
+    if @pin.save
+      redirect_to(root_path)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -24,11 +23,11 @@ class PinsController < ApplicationController
 
   def update
     @pin = Pin.find(params[:id])
-      if @pin.update_attributes(params[:pin])
-        redirect_to(pins_path)
-      else
-        render :new
-      end
+    if @pin.update_attributes(params[:pin])
+      redirect_to(pins_path)
+    else
+      render :new
+    end
   end
 
   def destroy
