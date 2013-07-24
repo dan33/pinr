@@ -10,8 +10,8 @@ class CategoryController < ApplicationController
   end
 
   def index
-    @categories = Category.order(:name)
-    @pins = Pin.all
+    @categories = Category.all
+    @pins = @category.pins
     @users = User.all
   end
 end

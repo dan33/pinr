@@ -1,0 +1,11 @@
+%script
+%ol#pins.no-bullet
+  - @pins.each do |pin|
+    %li
+      %script
+        = "$(document).ready(function () {"
+        = "add_marker(#{pin.latitude}, #{pin.longitude}, '#{pin.title}');"
+        = "});"
+        = "pins.push({id: #{pin.id}, title: '#{pin.title}', category_id: #{pin.category_id}, category: {name: '#{pin.category.name}', address: '#{pin.address}', longitude: #{pin.longitude}, latitude: #{pin.latitude}});"
+      %li.title= pin.title
+      %li.address= pin.address
