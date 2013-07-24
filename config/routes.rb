@@ -1,5 +1,5 @@
 Pinr::Application.routes.draw do
-  root :to => 'home#index'
+  root :to => 'pins#index'
 
   resources :users, :only => [:index, :new, :create]
   resources :pins, :only => [:index, :new, :create, :destroy]
