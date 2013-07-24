@@ -9,6 +9,7 @@ class PinsController < ApplicationController
 
   def create
     @pin = Pin.new(params[:pin])
+    @pin.user = @auth
     if @pin.save
       redirect_to(root_path)
     else
