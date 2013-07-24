@@ -8,13 +8,10 @@ class PinsController < ApplicationController
   end
 
   def create
-    @pin = Pin.new(params[:pin])
-    @pin.user = @auth
-    if @pin.save
-      redirect_to(root_path)
-    else
-      render :new
-    end
+    pin = Pin.create(params[:pin])
+    @auth.pins << pin
+
+    render :json => pin.as_json(:include => :category)
   end
 
   def edit
