@@ -5,7 +5,6 @@
       <%= f.text_field :title, :autofocus => true %>
       <%= f.label :address %>
       <%= f.text_field :address %>
-      <%= f.select_tag 'category_id', options_from_collection_for_select(@auth.categories.order(:value).reverse, 'id', 'name') %>
       <%= f.submit nil, :class => 'button radius' %>
       <% end %>
   </div>

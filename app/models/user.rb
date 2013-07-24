@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   has_many :pins
   has_many :categories, :through => :pins
 
-  attr_accessible :name, :email, :password
+  attr_accessible :name, :email, :password, :password_confirmation
 
   validates_presence_of :email
   validates_presence_of :name
