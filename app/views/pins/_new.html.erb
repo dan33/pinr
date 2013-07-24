@@ -1,6 +1,6 @@
 <div class="row">
   <div class="large-4 columns">
-    <%= form_for @pin do |f| %>
+    <%= form_for(resource, :as => resource_name, :url => new_pin_path) do |f| %>
       <%= f.label :title %>
       <%= f.text_field :title, :autofocus => true %>
       <%= f.label :address %>
