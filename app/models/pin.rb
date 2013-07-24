@@ -14,10 +14,23 @@
 #
 
 class Pin < ActiveRecord::Base
+  before_save :geocode
+
   belongs_to :user
   belongs_to :category
 
   attr_accessible :title, :address, :user_id
 
   validates_presence_of :title, :address
+
+
+  private
+  def geocode
+    result = Geocoder.search(self.address).first
+
+    if result.present?
+    self.latitude = result.latitude
+    self.longitude = result.longitude
+    end
+  end
 end
