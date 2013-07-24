@@ -1,7 +1,14 @@
-<% @categories.each do |category| %>
-  <p><%= category.name %></p>
-  <% category.pins.each do |pin| %>
-  <p><%= pin.title %></p>
-<% end %>
-<% end %>
+<div>
+	<% @categories.each do |category| %>
+	  	<h1><%= category.name %></h1>
+	  	<% category.pins.each do |pin| %>
+	  	<p><%= pin.title %></p>
+		<% end %>
+	<% end %>
+</div>
+
+<div id="map">
+	<div id="map_canvas">
+	</div>
+</div>
 

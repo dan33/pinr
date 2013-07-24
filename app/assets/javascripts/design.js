@@ -11,7 +11,6 @@ $('.login_button').click(function () {
 });
 
 $('.login_submit').click(function () {
-	event.preventDefault();
 	$('#loginform').addClass('invisible');
 });
 
