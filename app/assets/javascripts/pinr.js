@@ -166,7 +166,7 @@ $(document).ready(function () {
   display_map(-33.89336, 151.217167, 13);
 
    $('#outdoors').click(function () {
-      console.log("hello");
+
       var category = outdoors;
       //$('#map_canvas').empty();
   });
