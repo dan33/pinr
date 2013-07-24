@@ -12,7 +12,7 @@ var outdoors = [
     elementType: "geometry",
     stylers: [
       { hue: "#7cdaff" },
-      { saturation: 50 }
+      { saturation: 0 }
     ]
   },{
     featureType: "poi.business",
@@ -34,7 +34,7 @@ var interesting = [
     elementType: "geometry",
     stylers: [
       { hue: "#dfb7e5" },
-      { saturation: 100 }
+      { saturation: 0 }
     ]
   },{
     featureType: "poi.business",
@@ -45,7 +45,29 @@ var interesting = [
   }
 ];
 
-var $category = outdoors;
+var nightlife = [
+  {
+    featureType: "all",
+    stylers: [
+      { saturation: -100 }
+    ]
+  },{
+    featureType: "road.arterial",
+    elementType: "geometry",
+    stylers: [
+      { hue: "#393939" },
+      { saturation: 0 }
+    ]
+  },{
+    featureType: "poi.business",
+    elementType: "labels",
+    stylers: [
+      { visibility: "off" }
+    ]
+  }
+];
+
+var category = interesting;
 
 var display_map = function (lat, long, zoom) {
   canvas = $('#map_canvas')[0];
@@ -56,7 +78,7 @@ var display_map = function (lat, long, zoom) {
   var mapOptions = {
     center: new google.maps.LatLng(lat, long),
     zoom: zoom,
-    styles: $category,
+    styles: category,
     panControl: true,
     panControlOptions: {
     position: google.maps.ControlPosition.RIGHT_TOP
