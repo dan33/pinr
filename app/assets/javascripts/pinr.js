@@ -93,6 +93,8 @@ var work = [
 
 // var category = outdoors;
 
+
+
 var display_map = function (lat, long, zoom) {
   canvas = $('#map_canvas')[0];
   if (!canvas) {
@@ -103,6 +105,7 @@ var display_map = function (lat, long, zoom) {
     center: new google.maps.LatLng(lat, long),
     zoom: zoom,
     styles: category,
+    visualRefresh: true,
     panControl: true,
     panControlOptions: {
     position: google.maps.ControlPosition.RIGHT_TOP
@@ -155,15 +158,17 @@ function clear_markers()
   markers = [];
 };
 
+
 var category = interesting;
 
 $(document).ready(function () {
   display_map(-33.89336, 151.217167, 13);
 
-  $('#outdoors').click(function () {
-      console.log("hello")
-      var category = work;
+   $('#outdoors').click(function () {
+      console.log("hello");
+      var category = outdoors;
+      $('#map_canvas').empty();
+      debugger;
       display_map(-33.89336, 151.217167, 13);
   });
-
 });
