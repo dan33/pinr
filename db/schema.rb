@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130724053728) do
+ActiveRecord::Schema.define(:version => 20130724094037) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20130724053728) do
   create_table "pins", :force => true do |t|
     t.string   "title"
     t.text     "address"
-    t.float    "longitutde",  :default => 0.0
+    t.float    "longitude",   :default => 0.0
     t.float    "latitude",    :default => 0.0
     t.integer  "user_id"
     t.integer  "category_id"

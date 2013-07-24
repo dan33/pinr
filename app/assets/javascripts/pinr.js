@@ -118,7 +118,28 @@ var display_map = function (lat, long, zoom) {
   map = new google.maps.Map(canvas, mapOptions);
 };
 
+var create_pin = function () {
+    var title = $('#title').val();
+    var address = $('#address').val();
+    var category_id = $('#category_id').val();
+    var token = $('input[name="authenticity_token"]').val();
 
+    $.ajax({
+      dataType: 'json',
+      type: 'POST',
+      url: '/pins',
+      data: {
+        authenticity_token: token,
+        pin: {
+          title: title,
+          address: address,
+          category_id: category_id
+        }
+      }
+    });
+
+    return false;
+  };
 
 
 function add_marker(lat, long, title)
@@ -126,13 +147,13 @@ function add_marker(lat, long, title)
   var latlng = new google.maps.LatLng(lat, long);
   var marker = new google.maps.Marker({position: latlng, map: map, title: title});
   markers.push(marker);
-}
+};
 
 function clear_markers()
 {
   _.each(markers, function(m){m.setMap(null);});
   markers = [];
-}
+};
 
 var category = interesting;
 
