@@ -13,8 +13,19 @@ overflow: hidden;
 	height: 100%;
 	width: 18%;
 	background: white;
-	opacity: 0.9;
+	opacity: 0.6;
 	position: absolute;
 	z-index: 200;
-	left: 50px;
+	left: 5%;
+}
+
+#clean {
+	height: 98%;
+	width: 17%;
+	background: white;
+	opacity: 1;
+	position: absolute;
+	z-index: 300;
+	left: 5.5%;
+	top: 1%;
 }
