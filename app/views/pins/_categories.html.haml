@@ -2,8 +2,8 @@
 -@categories.each do |category|
 	%div
 		%div{ :id => category.name }
-			%li
+			%li.category_name
 				= category.name
 			- category.pins.each do |pin|
-				%li
+				%li.pin_title
 					= pin.title
