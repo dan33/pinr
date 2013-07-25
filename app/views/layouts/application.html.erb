@@ -23,9 +23,9 @@
 			  <% end %>
 			 </div>
 			<div id="loginform" class="invisible">
-				<%= render :partial => 'session/new', locals: { user: @user } %>
+				<%= render 'session/new', locals: { user: @user } %>
 			</div>
-			<div id="newpin" class="invisible">
+			<div id="newpin" >
 				<%= render 'pins/new' %>
 			</div>
 				<%= render 'pins/categories' %>
