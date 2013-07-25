@@ -86,6 +86,27 @@ var work = [
   }
 ];
 
+var dining = [
+  {
+    featureType: "all",
+    stylers: [
+      { saturation: -100 }
+    ]
+  },{
+    featureType: "road.arterial",
+    elementType: "geometry",
+    stylers: [
+      { color: "#E7BE50" }
+    ]
+  },{
+    featureType: "poi.business",
+    elementType: "labels",
+    stylers: [
+      { visibility: "off" }
+    ]
+  }
+];
+
 
 var display_map = function (lat, long, zoom) {
   canvas = $('#map_canvas')[0];
@@ -179,6 +200,34 @@ $(document).ready(function () {
   display_map(-33.89336, 151.217167, 13);
   $('#Outdoors').click(function () {
       category = outdoors;
+      $('#map_canvas').empty();
+      display_map(-33.89336, 151.217167, 13);
+
+  });
+
+  $('#Nightlife').click(function () {
+      category = nightlife;
+      $('#map_canvas').empty();
+      display_map(-33.89336, 151.217167, 13);
+
+  });
+
+  $('#Interesting').click(function () {
+      category = interesting;
+      $('#map_canvas').empty();
+      display_map(-33.89336, 151.217167, 13);
+
+  });
+
+  $('#Work').click(function () {
+      category = work;
+      $('#map_canvas').empty();
+      display_map(-33.89336, 151.217167, 13);
+
+  });
+
+  $('#Dining').click(function () {
+      category = dining;
       $('#map_canvas').empty();
       display_map(-33.89336, 151.217167, 13);
 

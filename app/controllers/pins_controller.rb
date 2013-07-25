@@ -6,6 +6,7 @@ class PinsController < ApplicationController
 
   def new
     @pin = Pin.new
+    @categories = Category.all
   end
 
   def create
