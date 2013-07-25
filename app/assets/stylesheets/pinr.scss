@@ -47,7 +47,7 @@ input {
 	text-decoration: none;
 	color: #fefefe;
 	font-family: Armata;
-	font-size: 1.2em;
+	font-size: 1.3em;
 	padding: 10px;
 }
 
@@ -71,22 +71,22 @@ input {
 
 #container {
 	height: 100%;
-	width: 18%;
+	width: 350px;
 	background: white;
 	opacity: 0.6;
 	position: absolute;
 	z-index: 200;
-	left: 5%;
+	left: 50px;
 }
 
 #clean {
 	height: 97%;
-	width: 16%;
+	width: 300px;
 	background: white;
 	opacity: 1;
 	position: absolute;
 	z-index: 300;
-	left: 6%;
+	left: 75px;
 	top: 1.5%;
 	overflow: auto;
 }
@@ -151,3 +151,42 @@ input {
 	display: none;
 	position: absolute;
 }
+
+.category_name {
+	font-size: 1em;
+	font-weight: 800;
+	color: #fefefe;
+	list-style: none;
+	font-family: Armata;
+	padding: 10%;
+}
+
+.pin_title {
+	font-size: 0.8em;
+	list-style: none;
+	padding-left: 13%;
+	padding-bottom: 5px;
+	font-family: Armata;
+	color: #fefefe;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
