@@ -89,7 +89,8 @@ input {
 	z-index: 300;
 	left: 40px;
 	top: -8px;
-	overflow: auto;
+	overflow-y: auto;
+	overflow-x: hidden
 }
 
 #login {
